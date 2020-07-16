@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap");
 
 *,
@@ -5,7 +12,8 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 :root {
@@ -15,20 +23,42 @@
 }
 
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 1.6rem;
   font-family: "Bitter", Arial, serif;
   line-height: 1.5;
+  background-image: -webkit-gradient(
+    linear,
+    left top, left bottom,
+    color-stop(50%, var(--color-background-light)),
+    color-stop(50%, #333333),
+    to(#333333)
+  );
+  background-image: -o-linear-gradient(
+    var(--color-background-light) 50%,
+    #333333 50%,
+    #333333 100%
+  );
   background-image: linear-gradient(
     var(--color-background-light) 50%,
     #333333 50%,
     #333333 100%
   );
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 8rem 6rem;
 }
 
@@ -47,6 +77,8 @@ h3 {
 }
 
 a {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -64,9 +96,12 @@ a:active {
   background-color: #fdfdfd;
   max-width: 136rem;
   margin: 0 auto;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 2rem 2fr;
   grid-template-columns: 1fr 2fr;
-  grid-template-areas:
+  -ms-grid-rows: auto 2rem auto 2rem auto 2rem auto;
+      grid-template-areas:
     "name title"
     "socials education"
     "experiences experiences"
@@ -77,27 +112,41 @@ a:active {
 }
 
 .name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: name;
 }
 
 .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   grid-area: title;
 }
 
 .education {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
   grid-area: education;
-  align-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .experiences {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: experiences;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 2rem 2fr;
   grid-template-columns: 1fr 2fr;
   grid-gap: 2rem;
   grid-row-gap: 4rem;
 }
 
 .experiences > h2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
   grid-column: 2 / 3;
   font-size: 2rem;
   margin-bottom: -2rem;
@@ -105,25 +154,36 @@ a:active {
 
 .experience {
   grid-column: 1 / -1;
+  display: -ms-grid;
   display: grid;
   grid-gap: 2rem;
+  -ms-grid-columns: 1fr 2rem 2fr;
   grid-template-columns: 1fr 2fr;
   letter-spacing: 0.4px;
 }
 
 .exp-details {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
 }
 
 .exp-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   color: var(--color-primary);
 }
 
 .footer {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: footer;
 }
 
@@ -150,9 +210,15 @@ a:active {
 .carousel-nav {
   width: 3.6rem;
   height: 3.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   border: none;
   border-radius: 50%;
@@ -163,13 +229,17 @@ a:active {
 
 .carousel-nav-next {
   top: 50%;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   right: 0.5rem;
 }
 
 .carousel-nav-prev {
   top: 50%;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   left: 0.5rem;
   display: none;
 }
@@ -195,6 +265,7 @@ a:active {
 } */
 
 .gallery {
+  display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 10rem;
@@ -204,7 +275,8 @@ a:active {
 .gallery img {
   width: 10rem;
   height: 10rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   /* border: 1px solid tomato; */
 }
 
@@ -216,23 +288,35 @@ a:active {
   right: 0;
   bottom: 0;
   left: 0;
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   pointer-events: none;
   opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
 
 .modalInner {
   border-radius: 4px;
   background: white;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
-  transform: translateY(-100vh);
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+  -webkit-transform: translateY(-100vh);
+      -ms-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   max-width: 1000px;
   height: calc(100vh - 100px);
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 50px 1fr 50px;
   grid-template-columns: 50px 1fr 50px;
   color: black;
   margin: 3rem;
@@ -241,15 +325,18 @@ a:active {
 
 .modal figure {
   height: 100%;
+  display: -ms-grid;
   display: grid;
   margin: 0;
+  -ms-grid-rows: 1fr auto;
   grid-template-rows: 1fr auto;
 }
 
 .modal img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .modal.open {
@@ -266,10 +353,14 @@ a:active {
 }
 
 .modal.open .modalInner {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .socials {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: socials;
   padding: 2rem;
 }
@@ -279,6 +370,8 @@ a:active {
 }
 
 .socials svg {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -305,8 +398,10 @@ a:active {
     padding: 4rem 3rem;
   }
   .cv {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    grid-template-areas:
+    -ms-grid-rows: auto 2rem auto 2rem auto 2rem auto 2rem auto;
+        grid-template-areas:
       "name"
       "socials"
       "title"
@@ -325,15 +420,43 @@ a:active {
 
   .experience {
     grid-gap: 2rem;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 
   .exp-time {
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 
   .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .title {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+  .education {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+  }
+  .experiences {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .socials {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
   }
 }
